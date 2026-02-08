@@ -1,0 +1,6 @@
+@Weather.Gateway.API_HostAddress = http://localhost:5118
+
+GET {{Weather.Gateway.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

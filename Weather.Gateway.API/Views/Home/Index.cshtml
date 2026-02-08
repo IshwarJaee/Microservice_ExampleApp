@@ -1,0 +1,47 @@
+﻿@model Weather.Gateway.API.DTOs.WeatherByCityResponse
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather app</title>
+
+        <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+        }
+
+        input, button {
+            padding: 8px;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <h2>Weather App</h2>
+
+        <form method="post">
+            <input type="text" name="city" placeholder="Enter City Name" required />
+            <button type="submit">Get Weather</button>
+        </form>
+
+        @if(ViewBag.Error != null)
+    {
+        <p style="color:red">@ViewBag.Error</p>
+    }
+
+    @if (Model != null)
+    {
+        <div class="result">
+            <h3>@Model.City</h3>
+            <p><b>Temperature:</b> @Model.Temperature °C</p>
+            <p><b>Windspeed:</b> @Model.Windspeed km/h</p>
+        </div>
+    }
+
+    </body>
+</html>
